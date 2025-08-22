@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Process Monitor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🖥️</div>
+      <div class="title">
+        <h1>Process Monitor</h1>
+        <p class="subtitle">Live snapshot of processes by host</p>
+      </div>
+    </div>
+    <nav class="actions">
+      <button id="refresh" class="btn primary">Refresh</button>
+      <button id="expandAll" class="btn">Expand all</button>
+      <button id="collapseAll" class="btn">Collapse all</button>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="toolbar card">
+      <div class="row">
+        <label class="label" for="host">Host</label>
+        <select id="host" class="select"></select>
+
+        <label class="label" for="search">Search</label>
+        <input id="search" class="input" placeholder="Filter by name or PID…" />
+
+        <label class="switch">
+          <input type="checkbox" id="autorefresh" />
+          <span class="slider"></span>
+          <span class="switch-label">Auto refresh</span>
+        </label>
+        <span class="muted">Every <span id="intervalLabel">10s</span></span>
+      </div>
+      <div class="row meta">
+        <span id="stamp"></span>
+        <span id="count" class="muted"></span>
+      </div>
+    </section>
+
+    <section id="treeCard" class="card">
+      <div id="empty" class="empty">No hosts yet. Run the agent to ingest a snapshot.</div>
+      <div id="tree"></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
