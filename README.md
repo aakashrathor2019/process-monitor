@@ -5,13 +5,6 @@ A minimal process monitoring system:
 - **Backend (Django + DRF + SQLite)** → stores snapshots and exposes API
 - **Frontend (HTML + JS + CSS)** → displays process hierarchy in an interactive tree
 
----
-
-## Demo Video
-[ Watch the 2-minute demo]()
-
----
-
 ## Quickstart
 
 ### Backend
